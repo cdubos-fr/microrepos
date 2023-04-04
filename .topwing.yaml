@@ -1,0 +1,21 @@
+project-builder:
+  options:
+      extra_context:
+        is_installable: 'true'
+  #     checkout: # Optional[str]=None,
+  #     no_input: #  bool=False,
+  #     replay: # Optional[str]=None,
+  #     overwrite_if_exists: # bool=False,
+  #     output_dir: # str='.',
+  #     config_file: # Optional[str]=None,
+  #     default_config: # bool=False,
+  #     password: # Optional[str]=None,
+  #     directory: # Optional[str]=None,
+  #     skip_if_file_exists: # bool=False,
+  #     accept_hooks: # bool=True,
+  #     init_git: # bool: True
+  templates:
+    python: /home/kobajaski/project/cookiecutter-python
+
+# csv:
+#   engine:

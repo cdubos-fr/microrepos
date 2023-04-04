@@ -1,0 +1,47 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "topwing"
+authors = [{name = "Clément Dubos", email = "contact@cdubos.fr"}]
+dynamic = ["version", "description"]
+readme = "README.md"
+requires-python = ">= 3.11"
+dependencies = [
+    "virtualenv",
+    "tox",
+    "typer[all]",
+    "gitpython",
+    "pygithub",
+    "pre-commit",
+    "pydantic",
+    "pyyaml",
+    "cookiecutter",
+]
+
+[project.entry-points."project-builder"]
+cookiecutter = "topwing.plugins.cookiecutter:CookiecutterEngine"
+
+[project.scripts]
+topwing = "topwing.cli:cli"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+version_files = [
+    "topwing/__init__.py",
+    "pyproject.toml:version"
+]
+style = [
+    ["qmark", "fg:#ff9d00 bold"],
+    ["question", "bold"],
+    ["answer", "fg:#ff9d00 bold"],
+    ["pointer", "fg:#ff9d00 bold"],
+    ["highlighted", "fg:#ff9d00 bold"],
+    ["selected", "fg:#cc5454"],
+    ["separator", "fg:#cc5454"],
+    ["instruction", ""],
+    ["text", ""],
+    ["disabled", "fg:#858585 italic"]
+]

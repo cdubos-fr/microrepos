@@ -1,0 +1,16 @@
+name: code-quality
+on:
+  push:
+    branches:
+    - main
+    tags:
+    - "v*"
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  code-quality:
+    uses: cdubos-fr/genertic-workflows/.github/workflows/code-quality.yaml@main
+    with:
+      python-version: 3.11
